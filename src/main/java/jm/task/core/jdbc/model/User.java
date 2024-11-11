@@ -82,6 +82,6 @@ public class User {
 
         User other = (User) obj;
         return id == other.getId() && Objects.equals(name, other.getName())
-                && Objects.equals(lastName, other.lastName) && age == other.age;
+                && Objects.equals(lastName, other.getLastName()) && age == other.getAge();
     }
 }
