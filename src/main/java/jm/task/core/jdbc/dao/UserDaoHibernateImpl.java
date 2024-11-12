@@ -2,8 +2,8 @@ package jm.task.core.jdbc.dao;
 
 import jm.task.core.jdbc.model.User;
 import jm.task.core.jdbc.util.Util;
-import org.hibernate.Session;
 
+import org.hibernate.Session;
 import javax.persistence.Query;
 import java.util.List;
 

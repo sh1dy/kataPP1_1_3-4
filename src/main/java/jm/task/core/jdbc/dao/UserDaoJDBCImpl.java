@@ -10,6 +10,10 @@ import java.util.List;
 public class UserDaoJDBCImpl implements UserDao {
     private final Connection conn = Util.getConnection();
 
+    public UserDaoJDBCImpl() {
+
+    }
+
     @Override
     public void createUsersTable() {
         try (Statement stmt = conn.createStatement()) {
@@ -60,7 +64,7 @@ public class UserDaoJDBCImpl implements UserDao {
     public List<User> getAllUsers() {
         List<User> users = new ArrayList<>();
         try (PreparedStatement stmt = conn.prepareStatement("select * from users");
-             ResultSet rs = stmt.executeQuery();) {
+             ResultSet rs = stmt.executeQuery()) {
             while (rs.next()) {
                 User user = new User(rs.getString(2), rs.getString(3),
                         rs.getByte(4));
